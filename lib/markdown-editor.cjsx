@@ -60,6 +60,9 @@ class MarkdownEditor extends React.Component
     dialog = require('remote').require('dialog')
     dialog.showErrorBox('Markdown Conversion Failed', error.toString())
 
+  focus: =>
+    this.focusEditor()
+
   _renderIntoIframe: (markdown)=>
     html = @_markdownToHtml(markdown)
     doc = React.findDOMNode(@refs.previewFrame).contentDocument
